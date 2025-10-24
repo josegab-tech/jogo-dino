@@ -1,0 +1,67 @@
+[gd_scene load_steps=13 format=3 uid="uid://cri40ixkky54b"]
+
+[ext_resource type="Texture2D" uid="uid://dqq2hko33mulv" path="res://assets/portal/frame-1.png" id="1_4s6lk"]
+[ext_resource type="Script" uid="uid://dpnm0ww8r0oxv" path="res://cenas/gate.gd" id="1_r3dyx"]
+[ext_resource type="Texture2D" uid="uid://y1l8jhjt4ia" path="res://assets/portal/frame-2.png" id="2_r3dyx"]
+[ext_resource type="Texture2D" uid="uid://cfgp4dxw23b3d" path="res://assets/portal/frame-3.png" id="3_yhiiy"]
+[ext_resource type="Texture2D" uid="uid://dm0kqudvrbyxu" path="res://assets/portal/frame-4.png" id="4_hk034"]
+[ext_resource type="Texture2D" uid="uid://bj5q81i6bdogf" path="res://assets/portal/frame-5.png" id="5_lh0rb"]
+[ext_resource type="Texture2D" uid="uid://r75yvyyeo2mt" path="res://assets/portal/frame-6.png" id="6_1r11y"]
+[ext_resource type="Texture2D" uid="uid://w0i771nr7p2l" path="res://assets/portal/frame-7.png" id="7_aicp3"]
+[ext_resource type="Texture2D" uid="uid://dfr7dpypcvda8" path="res://assets/portal/frame-8.png" id="8_1aici"]
+[ext_resource type="Texture2D" uid="uid://damuuoisuegp8" path="res://assets/portal/frame-9.png" id="9_gashk"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ne2sw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_4s6lk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_r3dyx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_yhiiy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_hk034")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_lh0rb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_1r11y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_aicp3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_1aici")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_gashk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3bcy4"]
+height = 50.0
+
+[node name="gate" type="Area2D"]
+position = Vector2(34, 25)
+script = ExtResource("1_r3dyx")
+metadata/_edit_group_ = true
+
+[node name="anim" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_ne2sw")
+autoplay = "default"
+frame_progress = 0.728084
+
+[node name="collisor" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CapsuleShape2D_3bcy4")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
