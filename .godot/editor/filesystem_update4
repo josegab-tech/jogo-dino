@@ -1,8 +1,6 @@
+res://cenas/fase_2.tscn
 res://main.tscn
 res://cenas/player.tscn
 res://cenas/gate.tscn
-res://cenas/fase_2.tscn
 res://cenas/coin.tscn
-res://cenas/coin.gd
-res://chest.gd
 res://cenas/chest.tscn
