@@ -4,3 +4,7 @@ res://cenas/player.tscn
 res://cenas/gate.tscn
 res://cenas/coin.tscn
 res://cenas/chest.tscn
+res://chest.gd
+res://cenas/coin.gd
+res://cenas/hud.tscn
+res://cenas/control.gd

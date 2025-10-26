@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://csg2pak7202nt" path="res://assets/Mini FX, Items & UI/Effects/Bright_Sparkle (16 x 16).png" id="2_rhi4h"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rhi4h"]
-radius = 8.0
-height = 16.0
+radius = 9.0
+height = 18.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_03m6f"]
 atlas = ExtResource("1_jwg46")
@@ -69,7 +69,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -99,15 +99,18 @@ animations = [{
 }]
 
 [node name="coin" type="Area2D"]
-position = Vector2(47, 33)
+position = Vector2(48, 33)
 script = ExtResource("1_03m6f")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="colision" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_rhi4h")
 
 [node name="anim" type="AnimatedSprite2D" parent="."]
+position = Vector2(2.14577e-06, -4.76837e-07)
+scale = Vector2(1.125, 1)
 sprite_frames = SubResource("SpriteFrames_3n3q4")
+animation = &"sparkle"
 autoplay = "default"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,81 @@
+[gd_scene load_steps=8 format=3 uid="uid://e6lyh3wmgnac"]
+
+[ext_resource type="Script" uid="uid://by8u25qegmseu" path="res://cenas/control.gd" id="1_8alo0"]
+[ext_resource type="Texture2D" uid="uid://nq4ayfl2n2l8" path="res://assets/Mini FX, Items & UI/Common Pick-ups/Coin (16 x 16).png" id="1_nkjil"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8alo0"]
+atlas = ExtResource("1_nkjil")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vbhdj"]
+atlas = ExtResource("1_nkjil")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jfuea"]
+atlas = ExtResource("1_nkjil")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jnuu4"]
+atlas = ExtResource("1_nkjil")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_345sl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8alo0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vbhdj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jfuea")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jnuu4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8alo0")
+
+[node name="container" type="MarginContainer" parent="control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="moedas_container" type="HBoxContainer" parent="control/container"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="anim" type="AnimatedSprite2D" parent="control/container/moedas_container"]
+position = Vector2(-9, 10)
+scale = Vector2(0.9375, 0.8125)
+sprite_frames = SubResource("SpriteFrames_345sl")
+autoplay = "default"
+frame_progress = 0.878297
+
+[node name="contador_moedas" type="Label" parent="control/container/moedas_container"]
+layout_mode = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 14
+text = "0000"

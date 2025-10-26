@@ -85,8 +85,10 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lquwl"]
+radius = 7.07107
 
 [node name="player" type="CharacterBody2D"]
+position = Vector2(-18, 3)
 metadata/_edit_group_ = true
 
 [node name="anim" type="AnimatedSprite2D" parent="."]
@@ -97,7 +99,7 @@ autoplay = "idle"
 frame_progress = 0.300296
 
 [node name="collisor" type="CollisionShape2D" parent="."]
-position = Vector2(0, 7)
+position = Vector2(1, 7)
 shape = SubResource("CircleShape2D_lquwl")
 
 [node name="Camera2D" type="Camera2D" parent="."]

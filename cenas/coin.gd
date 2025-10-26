@@ -1,5 +1,5 @@
 extends Area2D
-
+var moeda := 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -13,9 +13,13 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	$anim.play("sparkle")
-	pass # Replace with function body.
+	await $colision.call_deferred("queue_free")
+	Global.moedas += moeda
+	
+	
+	# Replace with function body.
 
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	queue_free()
-	pass # Replace with function body.
+	 # Replace with function body.

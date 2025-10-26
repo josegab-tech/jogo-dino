@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=4 uid="uid://cgx5hv186s1fb"]
+[gd_scene load_steps=8 format=4 uid="uid://cgx5hv186s1fb"]
 
 [ext_resource type="PackedScene" uid="uid://bee7pm3kovbsf" path="res://cenas/player.tscn" id="1_jqqf5"]
 [ext_resource type="Script" uid="uid://h68rida4a0ib" path="res://cenas/player.gd" id="2_dfqu4"]
 [ext_resource type="Texture2D" uid="uid://8t0058ees1kk" path="res://assets/Seasonal Tilesets/3 - Tropics/Terrain (16 x 16).png" id="3_fpkrg"]
 [ext_resource type="PackedScene" uid="uid://cri40ixkky54b" path="res://cenas/gate.tscn" id="4_jgmlh"]
+[ext_resource type="PackedScene" uid="uid://e6lyh3wmgnac" path="res://cenas/hud.tscn" id="5_dfqu4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1bvp3"]
 texture = ExtResource("3_fpkrg")
@@ -100,3 +101,5 @@ tile_set = SubResource("TileSet_lquwl")
 
 [node name="gate" parent="." instance=ExtResource("4_jgmlh")]
 position = Vector2(991, 221)
+
+[node name="HUD" parent="." instance=ExtResource("5_dfqu4")]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://x8fpsdd8kefp"]
+[gd_scene load_steps=10 format=4 uid="uid://x8fpsdd8kefp"]
 
 [ext_resource type="PackedScene" uid="uid://bee7pm3kovbsf" path="res://cenas/player.tscn" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://h68rida4a0ib" path="res://cenas/player.gd" id="2_h2yge"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cri40ixkky54b" path="res://cenas/gate.tscn" id="4_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://b22uu3to7gk7e" path="res://cenas/coin.tscn" id="5_lquwl"]
 [ext_resource type="PackedScene" uid="uid://dwf1n4ivqarw5" path="res://cenas/chest.tscn" id="6_7mycd"]
+[ext_resource type="PackedScene" uid="uid://e6lyh3wmgnac" path="res://cenas/hud.tscn" id="7_272bh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1bvp3"]
 texture = ExtResource("3_h2yge")
@@ -106,11 +107,14 @@ position = Vector2(1026, 220)
 [node name="coin" parent="." instance=ExtResource("5_lquwl")]
 position = Vector2(336, 111)
 
+[node name="coin4" parent="." instance=ExtResource("5_lquwl")]
+position = Vector2(496, 109)
+
 [node name="coin2" parent="." instance=ExtResource("5_lquwl")]
-position = Vector2(523, 102)
+position = Vector2(698, 53)
 
 [node name="coin3" parent="." instance=ExtResource("5_lquwl")]
-position = Vector2(808, 119)
+position = Vector2(869, 152)
 
 [node name="chest" parent="." instance=ExtResource("6_7mycd")]
 position = Vector2(291, 149)
@@ -120,3 +124,5 @@ position = Vector2(336, 149)
 
 [node name="chest3" parent="." instance=ExtResource("6_7mycd")]
 position = Vector2(372, 150)
+
+[node name="HUD" parent="." instance=ExtResource("7_272bh")]
